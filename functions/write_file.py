@@ -8,12 +8,13 @@ def write_file(working_directory, file_path, content):
     relative_contents = os.listdir(working_directory)
     relative_contents_tuple = tuple(relative_contents)
 
-    print(f"This is abs_working_dir: {abs_working_dir}")
-    print(f"This is target: {target}")
+    if file_path.startswith("/"):
+        print(f'Error: Cannot write to "{file_path}" as it is not a valid file path')
+        return
 
     if not target.startswith(abs_working_dir):
-        return f'Error: Cannot write to "{file_path}" as it is outside the permitted working directory'
-
+        print(f'Error: Cannot write to "{file_path}" as it is outside the permitted working directory')
+        return
     if not os.path.exists(target):
         try:
             with open(target, "w") as f:

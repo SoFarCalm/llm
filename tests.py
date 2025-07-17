@@ -13,19 +13,19 @@ from functions.write_file import write_file
 
 # main()
 
-def main():
-    #get_file_content("calculator", "lorem.txt")
-
-    get_file_content("calculator", "main.py")
-    get_file_content("calculator", "pkg/calculator.py")
-    get_file_content("calculator", "/bin/cat")
-    get_file_content("calculator", "pkg/does_not_exist.py")
-
-main()
-
 # def main():
-#     #write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum")
-#     #write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet")
-#     write_file("calculator", "hacker/tmp/temp.txt", "this should not be allowed")
+#     #get_file_content("calculator", "lorem.txt")
+
+#     get_file_content("calculator", "main.py")
+#     get_file_content("calculator", "pkg/calculator.py")
+#     get_file_content("calculator", "/bin/cat")
+#     get_file_content("calculator", "pkg/does_not_exist.py")
 
 # main()
+
+def main():
+    write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum")
+    write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet")
+    write_file("calculator", "/tmp/temp.txt", "this should not be allowed")
+
+main()
