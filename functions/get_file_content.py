@@ -32,6 +32,7 @@ def get_file_content(working_directory, file_path):
         except Exception as e:
             print(f"Error {e}")
 
+
 # def get_file_content(working_directory, file_path):
 #     abs_working_dir = os.path.abspath(working_directory)
 #     abs_file_path = os.path.abspath(os.path.join(working_directory, file_path))

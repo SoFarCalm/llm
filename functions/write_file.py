@@ -15,6 +15,7 @@ def write_file(working_directory, file_path, content):
     if not target.startswith(abs_working_dir):
         print(f'Error: Cannot write to "{file_path}" as it is outside the permitted working directory')
         return
+        
     if not os.path.exists(target):
         try:
             with open(target, "w") as f:

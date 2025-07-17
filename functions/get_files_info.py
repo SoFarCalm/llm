@@ -6,12 +6,13 @@ from calculator.config import *
 def get_files_info(working_directory, directory=None):
     abs_working_dir = os.path.abspath(working_directory)
     relative_path = os.path.join(working_directory, directory)
+    target = os.path.abspath(relative_path)
     absolute_path = os.path.abspath(relative_path)
 
     is_permitted = True
     is_directory = True
-
-    if directory not in os.listdir(working_directory) and directory !='.':
+    
+    if not target.startswith(abs_working_dir):
         print(f'Error: Cannot list "{directory}" as it is outside the permitted working directory')
         is_permitted = False
     
@@ -31,9 +32,7 @@ def get_files_info(working_directory, directory=None):
     else:
         pass
 
-
-
-#------TIPS-------#
+#------TIP-------#
 # os.path.abspath(): Get an absolute path from a relative path
 # os.path.join(): Join two paths together safely (handles slashes)
 # .startswith(): Check if a string starts with a substring
@@ -42,6 +41,7 @@ def get_files_info(working_directory, directory=None):
 # os.path.getsize(): Get the size of a file
 # os.path.isfile(): Check if a path is a file
 # .join(): Join a list of strings together with a separator
+# os.path.dirname: It returns the "head" of the path, which is everything leading up to the last component
 
 
 # os.path.abspath: Get an absolute path from a relative path
